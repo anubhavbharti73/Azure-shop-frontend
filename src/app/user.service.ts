@@ -20,15 +20,15 @@ export class UserService {
 //   return this.http.post<User>('http://localhost:1234/user/login',userAuth);
 // }
   registeruser(user:User){
-    return this.http.post<User>('https://anubhav-shop-anubhav-user-entry.azuremicroservices.io:443/user/reg/',user);
+    return this.http.post<User>('http://localhost:1234/user/reg/',user);
   }
 
   login(userAuth:UserAuth){
-    return this.http.post<User>('https://anubhav-shop-anubhav-user-entry.azuremicroservices.io/user/login/',userAuth);
+    return this.http.post<User>('http://localhost:1234/user/login/',userAuth);
   }
 
   adminAddItem(item:Items){
-    return this.http.post<Items>(`https://anubhav-shop-item-entry.azuremicroservices.io:443/item/add/`,item);
+    return this.http.post<Items>(`http://localhost:1236/item/add/`,item);
   }
 
 
@@ -41,17 +41,20 @@ export class UserService {
 
 
   getAllItems(){
-    return this.http.get<Items[]>(`https://anubhav-shop-item-entry.azuremicroservices.io:443/item/`);
+    return this.http.get<Items[]>(`http://localhost:1236/item/`);
   }
 
   addToCart(cartItem:CartItems){
-    return this.http.post<Items>(`https://anubhav-shop-cart-entry.azuremicroservices.io/cart/saveitem`,cartItem);
+    return this.http.post<Items>(`http://localhost:1235/cart/saveitem`,cartItem);
   }
 
   getMyCartList(emailid:string){
-    return this.http.get<CartItems[]>(`https://anubhav-shop-cart-entry.azuremicroservices.io/cart/${emailid}`);
+    return this.http.get<CartItems[]>(`http://localhost:1235/cart/${emailid}`);
   }
 
+  deletethisItem(itemId:String){
+    return this.http.delete(`http://localhost:1235/cart/${itemId}`);
+  }
 
 
 

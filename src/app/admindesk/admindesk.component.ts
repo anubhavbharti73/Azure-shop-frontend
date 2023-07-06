@@ -18,17 +18,6 @@ export class AdmindeskComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  defaultTest(){
-    this.userService.defaultTesttest().subscribe(
-      data=>{
-        console.log(data)
-      },
-      error=>{
-        console.log(error)
-      }
-    )
-  }
-
   addItem(regForm:NgForm){
 
     this.userService.adminAddItem(this.item).subscribe(

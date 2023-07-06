@@ -14,7 +14,6 @@ import { EmailValidator } from '@angular/forms';
 export class ShoppingpageComponent implements OnInit {
 
   item:Items[]=[];
-  totalCost=0
 
   constructor(private userService: UserService) { }
 
@@ -27,9 +26,6 @@ export class ShoppingpageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
-    
-    
 
     this.email=localStorage.getItem('user')+'';
 
@@ -91,6 +87,20 @@ addToCart(i:Items){
   itemsList(){
     this.change=1
     this.change1=0
+  }
+
+
+  deleteitem(fav:CartItems){
+    this.userService.deletethisItem(fav.itemId).subscribe(
+      data=>{
+        console.log(this.cartItem.itemId)
+        alert("Deleted");
+        this.myCart()
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 
 

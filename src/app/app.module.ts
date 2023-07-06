@@ -10,7 +10,6 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { ShoppingpageComponent } from './shoppingpage/shoppingpage.component';
 import { AdmindeskComponent } from './admindesk/admindesk.component';
-import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { DeleteComponent } from './delete/delete.component';
     RegisterationComponent,
     ShoppingpageComponent,
     AdmindeskComponent,
-    DeleteComponent,
   ],
   imports: [
     BrowserModule,
